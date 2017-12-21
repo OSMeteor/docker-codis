@@ -17,7 +17,7 @@ MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # The last update and install package for docker apt-get update && 
 # RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-9-jdk
-RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk autoconf
+RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk autoconf wget
 
 # Variable
 ENV SRC_DIR /opt
@@ -60,12 +60,14 @@ ENV PATH $PATH:$CODIS_HOME/bin
 ENV CODIS_CONF $CODIS_HOME/conf/config.ini
 ENV CODIS_GITHUB_URL github.com/CodisLabs/codis
 
-RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
- && git clone https://github.com/CodisLabs/codis.git \
+RUN mkdir -p ${CODIS_HOME}  \
+ # && git clone https://github.com/CodisLabs/codis.git \
  # && go get -d $CODIS_GITHUB_URL \
  # && mkdir $CODIS_HOME \
- && make -C ${CODIS_HOME} distclean \
- && make -C ${CODIS_HOME} build-all \
+ # && make -C ${CODIS_HOME} distclean \
+ # && make -C ${CODIS_HOME} build-all \
+ && wget  https://github.com/CodisLabs/codis/releases/download/3.2.1/codis3.2.1-go1.8.3-linux.zip \
+ && unzip codis3.2.1-go1.8.3-linux.zip \
  # && tar -C $CODIS_HOME -xvf deploy.tar \
  # && cd $SRC_DIR && rm -rf $GOPATH \
  #&& echo '' >> /etc/profile \
