@@ -59,6 +59,19 @@ ENV CODIS_HOME $SRC_DIR/codis
 ENV PATH $PATH:$CODIS_HOME/bin
 ENV CODIS_CONF $CODIS_HOME/conf/config.ini
 ENV CODIS_GITHUB_URL github.com/wandoulabs/codis
+
+RUN echo 'mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
+ && git clone https://$CODIS_GITHUB_URL $GOPATH/src/$CODIS_GITHUB_URL \
+ && go get -d $CODIS_GITHUB_URL \
+ && make build-all\
+ && mkdir $CODIS_HOME \
+ && tar -C $CODIS_HOME -xvf deploy.tar \
+ && cd $SRC_DIR && rm -rf $GOPATH \
+ && echo '' >> /etc/profile \
+ && echo "export CODIS_HOME=$CODIS_HOME" >> /etc/profile \
+ && echo "export CODIS_CONF=$CODIS_HOME/conf/config.ini" >> /etc/profile \
+ && echo 'export PATH=$PATH:$CODIS_HOME/bin' >> /etc/profile'
+ 
 RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
  && git clone https://$CODIS_GITHUB_URL $GOPATH/src/$CODIS_GITHUB_URL \
  && go get -d $CODIS_GITHUB_URL \
