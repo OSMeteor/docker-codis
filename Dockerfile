@@ -8,7 +8,7 @@
 # docker run -d --name="codis" -h "codis" codis:latest
 
 # Use the base images
-FROM tutum/ubuntu:latest
+FROM ubuntu:latest
 MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # Change the repository
