@@ -58,7 +58,7 @@ ADD conf/zoo.cfg $ZK_HOME/conf/zoo.cfg
 ENV CODIS_HOME $SRC_DIR/codis
 ENV PATH $PATH:$CODIS_HOME/bin
 ENV CODIS_CONF $CODIS_HOME/conf/config.ini
-ENV CODIS_GITHUB_URL github.com/wandoulabs/codis
+ENV CODIS_GITHUB_URL github.com/CodisLabs/codis
 
 RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
  && git clone https://github.com/CodisLabs/codis.git \
