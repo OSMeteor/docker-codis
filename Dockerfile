@@ -62,7 +62,7 @@ ENV CODIS_GITHUB_URL github.com/wandoulabs/codis
 RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
  && git clone https://$CODIS_GITHUB_URL $GOPATH/src/$CODIS_GITHUB_URL \
  && go get -d $CODIS_GITHUB_URL \
- && make \
+ && make build-all\
  && mkdir $CODIS_HOME \
  && tar -C $CODIS_HOME -xvf deploy.tar \
  && cd $SRC_DIR && rm -rf $GOPATH \
