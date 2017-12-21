@@ -12,10 +12,9 @@ FROM tutum/ubuntu:latest
 MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # Change the repository
-RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
+#RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
 
 # The last update and install package for docker apt-get update && 
-RUN apt-get install -y apt-transport-https
 RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk
 
 # Variable
