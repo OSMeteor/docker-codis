@@ -68,10 +68,10 @@ RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
  && make -C ${CODIS_HOME} build-all \
  # && tar -C $CODIS_HOME -xvf deploy.tar \
  # && cd $SRC_DIR && rm -rf $GOPATH \
- && echo '' >> /etc/profile \
- && echo "export CODIS_HOME=$CODIS_HOME" >> /etc/profile \
- && echo "export CODIS_CONF=$CODIS_HOME/conf/config.ini" >> /etc/profile \
- && echo 'export PATH=$PATH:$CODIS_HOME/bin' >> /etc/profile
+ #&& echo '' >> /etc/profile \
+ #&& echo "export CODIS_HOME=$CODIS_HOME" >> /etc/profile \
+ #&& echo "export CODIS_CONF=$CODIS_HOME/conf/config.ini" >> /etc/profile \
+ #&& echo 'export PATH=$PATH:$CODIS_HOME/bin' >> /etc/profile
 
 # Add the codis scripts
 ADD conf/codis $CODIS_HOME
