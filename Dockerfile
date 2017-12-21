@@ -63,7 +63,7 @@ ENV CODIS_GITHUB_URL github.com/CodisLabs/codis
 RUN mkdir -p $GOPATH/src/$CODIS_GITHUB_URL \
  && git clone https://github.com/CodisLabs/codis.git \
  # && go get -d $CODIS_GITHUB_URL \
- && mkdir $CODIS_HOME \
+ # && mkdir $CODIS_HOME \
  && make -C ${CODIS_HOME} distclean \
  && make -C ${CODIS_HOME} build-all \
  && tar -C $CODIS_HOME -xvf deploy.tar \
