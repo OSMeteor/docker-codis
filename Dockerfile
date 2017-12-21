@@ -8,7 +8,7 @@
 # docker run -d --name="codis" -h "codis" codis:latest
 
 # Use the base images
-FROM ubuntu:14.04
+FROM ubuntu:latest
 MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # Change the repository
