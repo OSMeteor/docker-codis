@@ -17,7 +17,7 @@ MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # The last update and install package for docker apt-get update && 
 # RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-9-jdk
-RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk
+RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk autoconf
 
 # Variable
 ENV SRC_DIR /opt
