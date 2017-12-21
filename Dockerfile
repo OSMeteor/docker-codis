@@ -8,14 +8,16 @@
 # docker run -d --name="codis" -h "codis" codis:latest
 
 # Use the base images
-FROM ubuntu:latest
+# FROM ubuntu:latest
+FROM tutum/ubuntu:latest
 MAINTAINER Yongbok Kim <ruo91@yongbok.net>
 
 # Change the repository
 #RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
 
 # The last update and install package for docker apt-get update && 
-RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-9-jdk
+# RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-9-jdk
+RUN apt-get update && apt-get install -y  supervisor git-core curl build-essential openjdk-7-jdk
 
 # Variable
 ENV SRC_DIR /opt
