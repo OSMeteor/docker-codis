@@ -39,7 +39,7 @@ RUN curl -XGET https://github.com/golang/go/tags | grep tag-name > /tmp/golang_t
  && echo '' >> /etc/profile
 
 # ZooKeeper
-ENV ZK_VER 3.4.6
+ENV ZK_VER 3.4.10
 ENV ZK_HOME $SRC_DIR/zookeeper
 ENV PATH $PATH:$ZK_HOME/bin
 ENV ZK_URL http://apache.mirror.cdnetworks.com/zookeeper/stable
