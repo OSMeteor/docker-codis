@@ -6,6 +6,12 @@ root@ruo91:~# docker run -d --name="codis" -h "codis" \
 -p 18087:18087 -p 11000:11000 -p 19000:19000 ruo91/codis
 ```
 or
+```sh
+root@ruo91:~# docker run -d --name="codis" -h "codis" \
+-p 18087:18087 -p 11000:11000 -p 19000:19000 -p 63800:6380 -p 63801:6381 -p 63802:6382 -p 63803:6383 ruo91/codis
+```
+
+
 
 #### - Build
 ```sh
