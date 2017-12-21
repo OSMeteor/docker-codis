@@ -66,8 +66,8 @@ RUN mkdir -p ${CODIS_HOME}  \
  # && mkdir $CODIS_HOME \
  # && make -C ${CODIS_HOME} distclean \
  # && make -C ${CODIS_HOME} build-all \
- && wget  https://github.com/CodisLabs/codis/releases/download/3.2.1/codis3.2.1-go1.8.3-linux.zip \
- && unzip codis3.2.1-go1.8.3-linux.zip \
+ && wget  https://github.com/CodisLabs/codis/releases/download/3.2.1/codis3.2.1-go1.8.3-linux.tar.gz \
+ && tar -xzvf codis3.2.1-go1.8.3-linux.tar.gz \
  # && tar -C $CODIS_HOME -xvf deploy.tar \
  # && cd $SRC_DIR && rm -rf $GOPATH \
  #&& echo '' >> /etc/profile \
